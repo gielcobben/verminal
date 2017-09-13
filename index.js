@@ -13,7 +13,7 @@ const white = "#FFFFFF";
 
 exports.decorateConfig = config =>
   Object.assign({}, config, {
-    fontFamily: 'Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+    fontFamily: 'Monaco, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
     fontSize: 12,
     backgroundColor,
     foregroundColor,

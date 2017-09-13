@@ -1,0 +1,17 @@
+
+{
+  "name": "Verminal",
+  "version": "1.0.0",
+  "description": "Personal theme for Hyper terminal.",
+  "license": "MIT",
+  "repository": "",
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "hyper",
+    "hyper-theme",
+    "verminal",
+    "vibrancy"
+  ]
+}

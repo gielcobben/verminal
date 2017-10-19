@@ -1,10 +1,9 @@
-
 {
-  "name": "Verminal",
+  "name": "verminal",
   "version": "1.0.0",
-  "description": "Personal theme for Hyper terminal.",
+  "description": "Personal theme for Hyper terminal. Created by @gielcobben.",
   "license": "MIT",
-  "repository": "",
+  "repository": "https://github.com/vernondegoede/verminal",
   "files": [
     "index.js"
   ],
@@ -12,6 +11,7 @@
     "hyper",
     "hyper-theme",
     "verminal",
-    "vibrancy"
+    "vibrancy",
+    "gielcobben"
   ]
 }

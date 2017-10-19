@@ -1,7 +1,5 @@
 ![](assets/screenshot.png)
 
-### Verminal [Hyper](https://github.com/zeit/hyper) theme
-
 ### Install using [HPM](https://github.com/zeit/hpm)
 ```
 $ npm install -g hpm-cli

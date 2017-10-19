@@ -1,6 +1,6 @@
 # Verminal - A minimalistic Hyper theme
 
-![](assets/screenshot.png)
+![](assets/screenshot.jpg)
 
 ## Installation
 

@@ -1,7 +1,7 @@
 module.exports.onWindow = browserWindow => browserWindow.setVibrancy("dark");
 
 const foregroundColor = "#fff";
-const backgroundColor = "rgba(0, 0, 0, .60)";
+const backgroundColor = "rgba(0, 0, 0, .65)";
 const overlap = "rgba(0, 0, 0, .15)";
 const red = "#FF3B30";
 const green = "#4CD964";
@@ -13,7 +13,7 @@ const white = "#FFFFFF";
 
 exports.decorateConfig = config =>
   Object.assign({}, config, {
-    fontFamily: 'Monaco, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+    fontFamily: '"SF Mono", "Monaco", "Inconsolata", "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace',
     fontSize: 12,
     backgroundColor,
     foregroundColor,
@@ -52,7 +52,7 @@ exports.decorateConfig = config =>
       border: 0;
     }
     .tab_textActive {
-      border-bottom: 2px solid ${green};
+      background: rgba(255, 255, 255, .05);
     }
   `
   });

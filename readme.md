@@ -1,22 +1,19 @@
-# Verminal - A minimalistic Hyper theme
+![](assets/screenshot.png)
 
-![](assets/screenshot.jpg)
+### Verminal [Hyper](https://github.com/zeit/hyper) theme
 
-## Installation
-
-### Using HPM (Hyper Package Manager)
-
+### Install using [HPM](https://github.com/zeit/hpm)
 ```
-npm install -g hpm-cli
-hpm install verminal
+$ npm install -g hpm-cli
+$ hpm install verminal
 ```
 
-Restart Hyper and enjoy the Verminal!
+Restart Hyper and enjoy the Verminal.
 
-### Manually
+### Install manually
+1. Open `~/.hyper.js`.
+2. Add `verminal` the the `plugins` array. 
+3. Enjoy Verminal.
 
-Open `~/.hyper.js` and add `verminal` the the `plugins` array. Restart Hyper and enjoy!
-
-## Credits
-
-This theme was originally developed by @gielcobben.
+### Credits
+This theme was originally developed by [@gielcobben](https://github.com/gielcobben).

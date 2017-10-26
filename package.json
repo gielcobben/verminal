@@ -1,17 +1,32 @@
 {
   "name": "verminal",
-  "version": "1.1.0",
-  "description": "Personal theme for Hyper terminal. Created by @gielcobben.",
+  "version": "1.1.1",
+  "description": "A Hyper theme.",
+  "contributors": [
+    {
+      "name": "Vernon de Goede",
+      "email": "info@vernondegoede.com",
+      "url": "https://github.com/vernondegoede"
+    },
+    {
+      "name": "Giel Cobben",
+      "email": "g.cobben@gmail.com",
+      "url": "https://github.com/gielcobben"
+    }
+  ],
   "license": "MIT",
   "repository": "https://github.com/vernondegoede/verminal",
-  "files": [
-    "index.js"
-  ],
+  "files": ["index.js"],
   "keywords": [
     "hyper",
     "hyper-theme",
-    "verminal",
+    "hyperterm",
+    "theme",
+    "ui",
+    "terminal",
     "vibrancy",
-    "gielcobben"
+    "zeit",
+    "gielcobben",
+    "vernondegoede"
   ]
 }

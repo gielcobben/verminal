@@ -1,5 +1,33 @@
 module.exports.onWindow = browserWindow => browserWindow.setVibrancy("dark");
 
+function detectConfigCommand(data) {
+  const patterns = [
+    "verminal: command not found",
+    "command not found: verminal",
+    "Unknown command 'verminal'",
+    "'verminal' is not recognized.*",
+  ];
+  return new RegExp("(" + patterns.join(")|(") + ")").test(data);
+}
+
+// Our extension's custom redux middleware. Here we can intercept redux actions and respond to them.
+module.exports.middleware = store => next => action => {
+  if ("SESSION_ADD_DATA" === action.type) {
+    const { data } = action;
+    console.log("data", data);
+    if (detectConfigCommand(data)) {
+      alert("toggle config");
+      store.dispatch({
+        type: "TOGGLE_VERMINAL_CONFIG",
+      });
+    } else {
+      next(action);
+    }
+  } else {
+    next(action);
+  }
+};
+
 const foregroundColor = "#fff";
 const backgroundColor = "rgba(0, 0, 0, .65)";
 const overlap = "rgba(0, 0, 0, .15)";
@@ -13,7 +41,8 @@ const white = "#FFFFFF";
 
 exports.decorateConfig = config =>
   Object.assign({}, config, {
-    fontFamily: '"SF Mono", "Monaco", "Inconsolata", "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace',
+    fontFamily:
+      '"SF Mono", "Monaco", "Inconsolata", "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace',
     fontSize: 12,
     backgroundColor,
     foregroundColor,
@@ -35,7 +64,7 @@ exports.decorateConfig = config =>
       lightBlue: blue,
       lightMagenta: magenta,
       lightCyan: cyan,
-      lightWhite: foregroundColor
+      lightWhite: foregroundColor,
     },
     css: `
     ${config.css}
@@ -54,5 +83,5 @@ exports.decorateConfig = config =>
     .tab_textActive {
       background: rgba(255, 255, 255, .05);
     }
-  `
+  `,
   });

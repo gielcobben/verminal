@@ -23,7 +23,7 @@ This app is developed by the same people who are using it. If you are one of the
 3. Enjoy Verminal.
 
 ###### Manually
-1. Open `~/.hyper.js`.
+1. Open `~/.hyper.js` in your favorite editor.
 2. Add `verminal` the the `plugins` array. 
 3. Enjoy Verminal.
 
@@ -33,8 +33,9 @@ This app is developed by the same people who are using it. If you are one of the
 ## ⚡️ Contribute
 This app is developed by the same people who are using it. If you are one of them (actually... us) and want to make our app even better, you're more than welcome to contribute.
 
-1. Fork this repository to your own GitHub account and then clone it to your local device
-2. Install the dependencies: `npm install`
+1. [Fork](https://help.github.com/articles/fork-a-repo/) this repository to your own GitHub account.
+2. [Clone](https://help.github.com/articles/cloning-a-repository/) to your local device: `git clone git@github.com:vernondegoede/verminal.git`
+3. Install the dependencies: `npm install`
 
 <br>
 <br>
@@ -63,4 +64,4 @@ We continueasly want to expand verminal to all your favorite developer tools. Cu
 
 ## 🔑 License
 
-[MIT](https://github.com/vernondegoede/verminal/blob/master/LICENSE) © Vernon de Goede
+[MIT](https://github.com/vernondegoede/verminal/blob/master/license) © Vernon de Goede

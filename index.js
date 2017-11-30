@@ -10,11 +10,15 @@ const blue = "#0095FF";
 const magenta = "#FF2D55";
 const cyan = "#5AC8FA";
 const white = "#FFFFFF";
+const defaultConfig = {
+  fontFamily: '"SF Mono", "Monaco", "Inconsolata", "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace',
+  fontSize : 12
+}
 
 exports.decorateConfig = config =>
   Object.assign({}, config, {
-    fontFamily: '"SF Mono", "Monaco", "Inconsolata", "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace',
-    fontSize: 12,
+    fontFamily: config.verminal.fontFamily || defaultConfig.fontFamily,
+    fontSize: config.verminal.fontSize || defaultConfig.fontSize,
     backgroundColor,
     foregroundColor,
     borderColor: overlap,

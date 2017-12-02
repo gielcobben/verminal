@@ -12,7 +12,7 @@ const cyan = "#5AC8FA";
 const white = "#FFFFFF";
 const defaultConfig = {
   fontFamily: '"SF Mono", "Monaco", "Inconsolata", "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace',
-  fontSize : 12
+  fontSize: 12
 }
 
 exports.decorateConfig = config =>

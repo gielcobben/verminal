@@ -24,8 +24,25 @@ Installing the Verminal theme for your Hyper terminal couldn't be easier.
 
 ###### Manually
 1. Open `~/.hyper.js` in your favorite editor.
-2. Add `verminal` to the `plugins` array. 
+2. Add `verminal` to the `plugins` array.
 3. Enjoy Verminal.
+
+<br>
+<br>
+
+## ⚙️ Configure
+Verminal aims to deliver a beautiful experience out of the box. However, you can override the font-family or font-size specified by Verminal.
+
+1. Open `~/.hyper.js` in your favorite editor.
+2. Add a `verminal` object to the `config` object and specify `fontFamily` and/or `fontSize`.
+
+###### Example
+```javascript
+verminal: {
+  fontFamily: '"My favourite font"',
+  fontSize: 16
+}
+```
 
 <br>
 <br>
@@ -64,4 +81,4 @@ We continuously want to expand verminal to all your favorite developer tools. We
 
 ## 🔑 License
 
-[MIT](https://github.com/vernondegoede/verminal/blob/master/license) © [Vernon de Goede](https://twitter.com/vernon_dg) 
+[MIT](https://github.com/vernondegoede/verminal/blob/master/license) © [Vernon de Goede](https://twitter.com/vernon_dg)

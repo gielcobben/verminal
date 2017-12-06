@@ -10,11 +10,20 @@ const blue = "#0095FF";
 const magenta = "#FF2D55";
 const cyan = "#5AC8FA";
 const white = "#FFFFFF";
+const defaultConfig = {
+  fontFamily: '"SF Mono", "Monaco", "Inconsolata", "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace',
+  fontSize: 12
+}
+
+// Check if Verminal configuration exists in ~/.hyper.js. If not, fall back to default configuration.
+const checkConfig = function(config, setting) {
+  return config.hasOwnProperty('verminal') && config.verminal[setting] || defaultConfig[setting]
+}
 
 exports.decorateConfig = config =>
   Object.assign({}, config, {
-    fontFamily: '"SF Mono", "Monaco", "Inconsolata", "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace',
-    fontSize: 12,
+    fontFamily: checkConfig(config, 'fontFamily'),
+    fontSize: checkConfig(config, 'fontSize'),
     backgroundColor,
     foregroundColor,
     borderColor: overlap,

@@ -14,7 +14,7 @@ const white = "#FFFFFF";
 const defaultConfig = {
   fontFamily:
     '"SF Mono", "Monaco", "Inconsolata", "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace',
-  fontSize: 12,
+  fontSize: 14,
 };
 
 // Check if Verminal configuration exists in ~/.hyper.js. If not, fall back to default configuration.
@@ -58,6 +58,7 @@ exports.decorateConfig = config =>
     .hyper_main {
       border: none !important;
     }
+
     .header_header {
       background-color: ${overlap} !important;
     }
@@ -70,50 +71,54 @@ exports.decorateConfig = config =>
     .tab_textActive {
       background: rgba(255, 255, 255, .05);
     }
+
     .hyper-search-wrapper {
-        border: 0 !important;
-        padding: 0 !important;
-        background-color: transparent !important;
-        display: flex;
-        opacity: 0.8 !important;
-      }
+      font-family: "SF Mono", "Monaco", "Inconsolata", "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace !important;
+      position: absolute !important;
+      top: auto !important;
+      bottom: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      border: 0 !important;
+      padding: 0 !important;
+      background-color: rgba(255, 255, 255, .1) !important;
+      display: flex;
+      align-items: center;
+      width: 100% !important;
+      height: 31px !important;
+      border-radius: 0px !important;
+      opacity: 1 !important;
+    }
+
     .hyper-search-wrapper button {
       top: 0 !important;
       opacity: 0.8 !important;
       padding: 0 6px;
       cursor: pointer;
+      width: 45px !important;
+      background: none !important;
+      color: rgba(255, 255, 255, 0.65) !important;
     }
+    
     .hyper-search-wrapper button:hover {
       opacity: 1.0 !important;
     }
+    
     .hyper-search-wrapper button:nth-of-type(1) {
-      border-radius: 4px 0 0 4px !important;
-      border-right: 1px solid #ddd !important;
+      border-radius: 6px 0 0 6px !important;
+      border-right: none !important;
     }
+
     .hyper-search-wrapper button:nth-of-type(2) {
       border-radius: 0 4px 4px 0 !important;
     }
-    .hyper-search-wrapper:before {
-      width: 20px;
-      color: #000;
-      position: absolute;
-      content: "🔍";
-      font-size: 10px;
-      margin: 7px;
-      z-index: 999;
-    }
+
     #hyper-search-input {
-      background-color: #fff !important;
-      border-radius: 4px;
-      box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
-      padding: 3px 6px 3px 24px !important;
-      color: #000 !important;
-      opacity: 0.9 !important;
-      margin-right: 2px;
-    }
-    #hyper-search-input:focus {
-      opacity: 1.0 !important;
-      box-shadow: 0 1px 10px rgba(0, 0, 0, 1.0);
+      font-family: "SF Mono", "Monaco", "Inconsolata", "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace !important;
+      background-color: none !important;
+      padding: 8px 16px !important;
+      color: #fff !important;
+      width: 100%;
     }
   `,
   });

@@ -1,4 +1,5 @@
-module.exports.onWindow = browserWindow => browserWindow.setVibrancy("dark");
+module.exports.onWindow = browserWindow =>
+  browserWindow.setVibrancy("ultra-dark");
 
 const foregroundColor = "#fff";
 const backgroundColor = "rgba(0, 0, 0, .65)";
@@ -11,19 +12,25 @@ const magenta = "#FF2D55";
 const cyan = "#5AC8FA";
 const white = "#FFFFFF";
 const defaultConfig = {
-  fontFamily: '"SF Mono", "Monaco", "Inconsolata", "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace',
-  fontSize: 12
-}
+  fontFamily:
+    '"SF Mono", "Monaco", "Inconsolata", "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace',
+  fontSize: 12,
+};
 
 // Check if Verminal configuration exists in ~/.hyper.js. If not, fall back to default configuration.
 const checkConfig = function(config, setting) {
-  return config.hasOwnProperty('verminal') && config.verminal[setting] || defaultConfig[setting]
-}
+  return (
+    (config.hasOwnProperty("verminal") && config.verminal[setting]) ||
+    defaultConfig[setting]
+  );
+};
 
 exports.decorateConfig = config =>
   Object.assign({}, config, {
-    fontFamily: checkConfig(config, 'fontFamily'),
-    fontSize: checkConfig(config, 'fontSize'),
+    fontFamily: checkConfig(config, "fontFamily"),
+    fontSize: checkConfig(config, "fontSize"),
+    fontWeight: checkConfig(config, "fontWeight"),
+    fontWeightBold: checkConfig(config, "fontWeightBold"),
     backgroundColor,
     foregroundColor,
     borderColor: overlap,
@@ -44,7 +51,7 @@ exports.decorateConfig = config =>
       lightBlue: blue,
       lightMagenta: magenta,
       lightCyan: cyan,
-      lightWhite: foregroundColor
+      lightWhite: foregroundColor,
     },
     css: `
     ${config.css}

@@ -15,6 +15,8 @@
 <br>
 
 ## 🛠 Install
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/defringe/verminal.svg)](https://greenkeeper.io/)
 Installing the Verminal theme for your Hyper terminal couldn't be easier.
 
 ###### Hyper Package Manager ([HPM](https://github.com/zeit/hpm))

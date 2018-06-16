@@ -48,7 +48,7 @@ verminal: {
 <br>
 
 ## ⚡️ Contribute
-These themes are built by developers, for developers. If you are a developer and want to help improve our themes, you're more than welcome to contribute.
+Verminal is built by developers, for developers. If you are a developer and want to help improve our themes, you're more than welcome to contribute.
 
 1. [Fork](https://help.github.com/articles/fork-a-repo/) this repository to your own GitHub account.
 2. [Clone](https://help.github.com/articles/cloning-a-repository/) to your local device: `git clone git@github.com:<your_github_username>/verminal.git`

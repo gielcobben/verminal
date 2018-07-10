@@ -15,6 +15,10 @@ const defaultConfig = {
   fontFamily:
     '"SF Mono", "Monaco", "Inconsolata", "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace',
   fontSize: 12,
+  foregroundColor,
+  backgroundColor,
+  borderColor: overlap,
+  cursorColor: blue,
 };
 
 // Check if Verminal configuration exists in ~/.hyper.js. If not, fall back to default configuration.
@@ -31,10 +35,10 @@ exports.decorateConfig = config =>
     fontSize: checkConfig(config, "fontSize"),
     fontWeight: checkConfig(config, "fontWeight"),
     fontWeightBold: checkConfig(config, "fontWeightBold"),
-    backgroundColor,
-    foregroundColor,
-    borderColor: overlap,
-    cursorColor: blue,
+    backgroundColor: checkConfig(config, "backgroundColor"),
+    foregroundColor: checkConfig(config, "foregroundColor"),
+    borderColor: checkConfig(config, "borderColor"),
+    cursorColor: checkConfig(config, "cursorColor"),
     colors: {
       black: backgroundColor,
       red,

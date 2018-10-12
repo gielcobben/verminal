@@ -19,6 +19,7 @@ const defaultConfig = {
   backgroundColor,
   borderColor: overlap,
   cursorColor: blue,
+  minimal: false
 };
 
 // Check if Verminal configuration exists in ~/.hyper.js. If not, fall back to default configuration.
@@ -63,7 +64,7 @@ exports.decorateConfig = config =>
       border: none !important;
     }
     .header_header {
-      background-color: ${overlap} !important;
+      background-color: ${config.minimal === true ? 'transparent' : overlap} !important;
     }
     .tabs_borderShim {
       border-color: transparent !important;

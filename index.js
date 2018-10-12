@@ -62,8 +62,9 @@ exports.decorateConfig = config =>
     .hyper_main {
       border: none !important;
     }
+
     .header_header {
-      background-color: ${overlap} !important;
+      background-color: transparent !important;
     }
     .tabs_borderShim {
       border-color: transparent !important;

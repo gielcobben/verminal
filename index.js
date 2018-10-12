@@ -1,5 +1,4 @@
-module.exports.onWindow = browserWindow =>
-  browserWindow.setVibrancy("ultra-dark");
+module.exports.onWindow = browserWindow => browserWindow.setVibrancy("ultra-dark");
 
 const foregroundColor = "#fff";
 const backgroundColor = "rgba(0, 0, 0, .65)";
@@ -12,14 +11,31 @@ const magenta = "#FF2D55";
 const cyan = "#5AC8FA";
 const white = "#FFFFFF";
 const defaultConfig = {
-  fontFamily:
-    '"SF Mono", "Monaco", "Inconsolata", "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace',
+  fontFamily: '"SF Mono", "Monaco", "Inconsolata", "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace',
   fontSize: 12,
   foregroundColor,
   backgroundColor,
   borderColor: overlap,
   cursorColor: blue,
-  minimal: false
+  minimal: false,
+  colors: {
+    black: backgroundColor,
+    red,
+    green,
+    yellow,
+    blue,
+    magenta,
+    cyan,
+    white,
+    lightBlack: "#686868",
+    lightRed: red,
+    lightGreen: green,
+    lightYellow: yellow,
+    lightBlue: blue,
+    lightMagenta: magenta,
+    lightCyan: cyan,
+    lightWhite: foregroundColor,
+  }
 };
 
 // Check if Verminal configuration exists in ~/.hyper.js. If not, fall back to default configuration.
@@ -40,26 +56,8 @@ exports.decorateConfig = config =>
     foregroundColor: checkConfig(config, "foregroundColor"),
     borderColor: checkConfig(config, "borderColor"),
     cursorColor: checkConfig(config, "cursorColor"),
-    colors: {
-      black: backgroundColor,
-      red,
-      green,
-      yellow,
-      blue,
-      magenta,
-      cyan,
-      white,
-      lightBlack: "#686868",
-      lightRed: red,
-      lightGreen: green,
-      lightYellow: yellow,
-      lightBlue: blue,
-      lightMagenta: magenta,
-      lightCyan: cyan,
-      lightWhite: foregroundColor,
-    },
-    css: `
-    ${config.css}
+    colors: checkConfig(config, "colors"),
+    css: `    
     .hyper_main {
       border: none !important;
     }
@@ -120,5 +118,7 @@ exports.decorateConfig = config =>
       opacity: 1.0 !important;
       box-shadow: 0 1px 10px rgba(0, 0, 0, 1.0);
     }
+
+    ${config.css}
   `,
   });

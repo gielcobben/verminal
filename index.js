@@ -1,6 +1,3 @@
-module.exports.onWindow = browserWindow =>
-  browserWindow.setVibrancy("ultra-dark");
-
 const foregroundColor = "#fff";
 const backgroundColor = "rgba(0, 0, 0, .65)";
 const overlap = "rgba(0, 0, 0, .15)";
@@ -12,60 +9,79 @@ const magenta = "#FF2D55";
 const cyan = "#5AC8FA";
 const white = "#FFFFFF";
 const defaultConfig = {
-  fontFamily:
-    '"SF Mono", "Monaco", "Inconsolata", "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace',
+  fontFamily: '"SF Mono", "Monaco", "Inconsolata", "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace',
   fontSize: 12,
   foregroundColor,
   backgroundColor,
   borderColor: overlap,
   cursorColor: blue,
-  minimal: false
+  minimal: false,
+  colors: {
+    black: backgroundColor,
+    red,
+    green,
+    yellow,
+    blue,
+    magenta,
+    cyan,
+    white,
+    lightBlack: "#686868",
+    lightRed: red,
+    lightGreen: green,
+    lightYellow: yellow,
+    lightBlue: blue,
+    lightMagenta: magenta,
+    lightCyan: cyan,
+    lightWhite: foregroundColor,
+  }
 };
 
 // Check if Verminal configuration exists in ~/.hyper.js. If not, fall back to default configuration.
-const checkConfig = function(config, setting) {
-  return (
-    (config.hasOwnProperty("verminal") && config.verminal[setting]) ||
-    defaultConfig[setting]
-  );
-};
+const checkConfig = (config, setting) => (config.hasOwnProperty("verminal") && config.verminal[setting]) || defaultConfig[setting]
+const checkConfigColor = (config, colorName) => (config.hasOwnProperty("verminal") && config.verminal.colors && config.verminal.colors[colorName]) || defaultConfig.colors[colorName]
+// Setup vibrancy
+exports.onWindow = browserWindow => browserWindow.setVibrancy("ultra-dark")
 
-exports.decorateConfig = config =>
-  Object.assign({}, config, {
-    fontFamily: checkConfig(config, "fontFamily"),
-    fontSize: checkConfig(config, "fontSize"),
-    fontWeight: checkConfig(config, "fontWeight"),
-    fontWeightBold: checkConfig(config, "fontWeightBold"),
-    backgroundColor: checkConfig(config, "backgroundColor"),
-    foregroundColor: checkConfig(config, "foregroundColor"),
-    borderColor: checkConfig(config, "borderColor"),
-    cursorColor: checkConfig(config, "cursorColor"),
-    colors: {
-      black: backgroundColor,
-      red,
-      green,
-      yellow,
-      blue,
-      magenta,
-      cyan,
-      white,
-      lightBlack: "#686868",
-      lightRed: red,
-      lightGreen: green,
-      lightYellow: yellow,
-      lightBlue: blue,
-      lightMagenta: magenta,
-      lightCyan: cyan,
-      lightWhite: foregroundColor,
-    },
-    css: `
-    ${config.css}
+// Setup configs
+exports.decorateConfig = config => {
+
+  return Object.assign({}, config, {
+        fontFamily: checkConfig(config, "fontFamily"),
+        fontSize: checkConfig(config, "fontSize"),
+        fontWeight: checkConfig(config, "fontWeight"),
+        fontWeightBold: checkConfig(config, "fontWeightBold"),
+        backgroundColor: checkConfig(config, "backgroundColor"),
+        foregroundColor: checkConfig(config, "foregroundColor"),
+        borderColor: checkConfig(config, "borderColor"),
+        cursorColor: checkConfig(config, "cursorColor"),
+        minimal: checkConfig(config, "minimal"),
+        colors: {
+          black: checkConfigColor(config, "black"),
+          red: checkConfigColor(config, "red"),
+          green: checkConfigColor(config, "green"),
+          yellow: checkConfigColor(config, "yellow"),
+          blue: checkConfigColor(config, "blue"),
+          magenta: checkConfigColor(config, "magenta"),
+          cyan: checkConfigColor(config, "cyan"),
+          white: checkConfigColor(config, "white"),
+          lightBlack: checkConfigColor(config, "lightBlack"),
+          lightRed: checkConfigColor(config, "lightRed"),
+          lightGreen: checkConfigColor(config, "lightGreen"),
+          lightYellow: checkConfigColor(config, "lightYellow"),
+          lightBlue: checkConfigColor(config, "lightBlue"),
+          lightMagenta: checkConfigColor(config, "lightMagenta"),
+          lightCyan: checkConfigColor(config, "lightCyan"),
+          lightWhite: checkConfigColor(config, "lightWhite")
+        },
+        css: `
     .hyper_main {
       border: none !important;
     }
+
     .header_header {
-      background-color: ${config.minimal === true ? 'transparent' : overlap} !important;
+      background-color: ${config.verminal.minimal ? 'transparent' : overlap} !important;
     }
+
     .tabs_borderShim {
       border-color: transparent !important;
     }
@@ -120,5 +136,8 @@ exports.decorateConfig = config =>
       opacity: 1.0 !important;
       box-shadow: 0 1px 10px rgba(0, 0, 0, 1.0);
     }
+
+    ${config.css}
   `,
-  });
+  })
+};

@@ -79,7 +79,7 @@ exports.decorateConfig = config => {
     }
 
     .header_header {
-      background-color: ${config.verminal.minimal ? 'transparent' : overlap} !important;
+      background-color: ${config && config.verminal && config.verminal.minimal ? 'transparent' : overlap} !important;
     }
 
     .tabs_borderShim {

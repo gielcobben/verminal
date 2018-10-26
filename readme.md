@@ -22,6 +22,9 @@ Installing the Verminal theme for your Hyper terminal couldn't be easier.
 2. `hpm install verminal`
 3. Enjoy Verminal.
 
+###### Inside Your Hyper Terminal
+1. `hyper i verminal`
+
 ###### Manually
 1. Open `~/.hyper.js` in your favorite editor.
 2. Add `verminal` to the `plugins` array.

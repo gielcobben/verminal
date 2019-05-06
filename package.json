@@ -1,6 +1,6 @@
 {
   "name": "verminal",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "description": "A Hyper theme.",
   "contributors": [
     {
@@ -16,7 +16,9 @@
   ],
   "license": "MIT",
   "repository": "https://github.com/vernondegoede/verminal",
-  "files": ["index.js"],
+  "files": [
+    "index.js"
+  ],
   "keywords": [
     "hyper",
     "hyper-theme",

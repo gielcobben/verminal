@@ -1,5 +1,5 @@
 const foregroundColor = "#fff";
-const backgroundColor = "rgba(0, 0, 0, 1)";
+const backgroundColor = "rgba(0, 0, 0, .65)";
 const overlap = "rgba(0, 0, 0, .15)";
 const red = "#FF3B30";
 const green = "#4CD964";

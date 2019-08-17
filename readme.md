@@ -17,11 +17,6 @@
 ## 🛠 Install
 Installing the Verminal theme for your Hyper terminal couldn't be easier.
 
-###### Hyper Package Manager ([HPM](https://github.com/zeit/hpm))
-1. `npm install -g hpm-cli`
-2. `hpm install verminal`
-3. Enjoy Verminal.
-
 ###### Inside Your Hyper Terminal
 1. `hyper i verminal`
 

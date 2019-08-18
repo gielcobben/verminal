@@ -38,7 +38,9 @@ const defaultConfig = {
 };
 
 // Check if Verminal configuration exists in ~/.hyper.js. If not, fall back to default configuration.
-const checkConfig = (config, setting) => (config.hasOwnProperty("verminal") && config.verminal[setting]) || defaultConfig[setting]
+const checkConfig = (config, setting) => config.hasOwnProperty("verminal") && config.verminal[setting] !== undefined ? 
+config.verminal[setting]  : defaultConfig[setting]
+
 const checkConfigColor = (config, colorName) => (config.hasOwnProperty("verminal") && config.verminal.colors && config.verminal.colors[colorName]) || defaultConfig.colors[colorName]
 
 // Setup configs

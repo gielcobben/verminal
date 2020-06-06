@@ -1,5 +1,6 @@
 const foregroundColor = "#fff";
 const backgroundColor = "rgba(0, 0, 0, .65)";
+const selectionColor = "rgba(0, 149, 255, 0.65)";
 const overlap = "rgba(0, 0, 0, .15)";
 const red = "#FF3B30";
 const green = "#4CD964";
@@ -14,6 +15,7 @@ const defaultConfig = {
   fontSize: 12,
   foregroundColor,
   backgroundColor,
+  selectionColor,
   borderColor: overlap,
   cursorColor: blue,
   minimal: false,
@@ -63,6 +65,7 @@ exports.decorateConfig = config => {
     fontWeightBold: checkConfig(config, "fontWeightBold"),
     backgroundColor: checkConfig(config, "backgroundColor"),
     foregroundColor: checkConfig(config, "foregroundColor"),
+    selectionColor: checkConfig(config, "selectionColor"),
     borderColor: checkConfig(config, "borderColor"),
     cursorColor: checkConfig(config, "cursorColor"),
     minimal: checkConfig(config, "minimal"),

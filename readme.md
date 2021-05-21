@@ -42,6 +42,14 @@ verminal: {
 }
 ```
 
+### Show status bar
+To show back your status bar, use:
+```javascript
+verminal: {
+  minimal: false, // defaults to "true".  
+}
+```
+
 <br>
 <br>
 

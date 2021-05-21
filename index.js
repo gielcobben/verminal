@@ -18,7 +18,7 @@ const defaultConfig = {
   selectionColor,
   borderColor: overlap,
   cursorColor: blue,
-  minimal: false,
+  minimal: true,
   colors: {
     black: backgroundColor,
     red,

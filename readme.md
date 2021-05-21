@@ -63,4 +63,4 @@ Verminal is built by developers, for developers. If you are a developer and want
 
 ## 🔑 License
 
-[MIT](https://github.com/defringe/verminal/blob/master/license) © [Vernon de Goede](https://twitter.com/vernon_dg)
+[MIT](https://github.com/defringe/verminal/blob/master/license) © [Vernon de Goede](https://twitter.com/vernon_dg) & [Giel Cobben](https://twitter.com/gielcobben)
